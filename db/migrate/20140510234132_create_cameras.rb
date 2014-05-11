@@ -6,9 +6,11 @@ class CreateCameras < ActiveRecord::Migration
       t.string :name
       t.string :type
       t.integer :price
-      t.integer :megapixels
+      t.string :megapixels
       t.string :memory_type
-      t.string :image_url
+      t.string :small_image_url
+      t.string :large_image_url
+      t.string :lcd_screen_size
 
     end
   end

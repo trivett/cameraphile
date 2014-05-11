@@ -44,3 +44,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "devise"
+gem "httparty"
+gem "better_errors"
+gem 'pry-rails', :group => :development

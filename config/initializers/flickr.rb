@@ -1,0 +1,3 @@
+$KEY = "dda934d6f7dc0e6265cc0ca84830338f"
+
+$SECRET="844cf23f261f4455"
