@@ -2,7 +2,7 @@ class CreatePhotos < ActiveRecord::Migration
   def change
     create_table :photos do |t|
       t.belongs_to :camera
-      t.integer :flickr_id
+      t.string :flickr_id
       t.string :photo_url
       t.string :title
       t.string :owner
@@ -11,6 +11,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :camera_model
       t.string :camera_id
       t.string :focal_length
+      t.string :lens
       t.string :exposure_time
       t.string :aperature
       t.string :iso_speed

@@ -30,17 +30,18 @@ ActiveRecord::Schema.define(version: 20140511013033) do
   end
 
   create_table "photos", force: true do |t|
-    t.string  "camera_id"
-    t.integer "flickr_id"
-    t.string  "photo_url"
-    t.string  "title"
-    t.string  "owner"
-    t.string  "photopage"
-    t.string  "camera_model"
-    t.string  "focal_length"
-    t.string  "exposure_time"
-    t.string  "aperature"
-    t.string  "iso_speed"
+    t.string "camera_id"
+    t.string "flickr_id"
+    t.string "photo_url"
+    t.string "title"
+    t.string "owner"
+    t.string "photopage"
+    t.string "camera_model"
+    t.string "focal_length"
+    t.string "lens"
+    t.string "exposure_time"
+    t.string "aperature"
+    t.string "iso_speed"
   end
 
   create_table "users", force: true do |t|
