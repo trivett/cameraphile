@@ -1,0 +1,35 @@
+
+
+<div class="controls">
+  <label>Filter:</label>
+  <button class="filter" data-filter="all">All</button>
+  <% @brands.each do |brand| %>
+  <button class="filter" data-filter=".<%= brand %>"><%= brand.upcase %></button>
+  <% end %>
+</div>
+<div id="Container" class="camera-list">
+<% @cameras.sort_by {|c| c.photos.count}.reverse.each do |camera| %>
+
+<div class="mix <%= camera.brand %> camera-profile">
+  <%= image_tag camera.small_image_url, :class => "small-camera-image" %>
+  <p><strong><%= camera.name %></strong></p>
+
+  <ul class="camera-stats">
+    <li>Megapixels: <%= camera.megapixels %></li>
+    <li>Memory type: <%= camera.memory_type %></li>
+    <li>Price: <%= camera.price %></li>
+  </ul>
+
+  <%= form_tag "/add_to_list", :method => "post", remote: true do %>
+  <%= hidden_field_tag :camera_id, camera.id %>
+  <%= hidden_field_tag :wishlist_id, current_user.id %>
+  <%= submit_tag "Add to wishlist", :class =>"button" %>
+<% end %>
+
+<%= link_to "See more about this camera", camera %>
+
+
+</div>
+
+<% end %>
+</div>

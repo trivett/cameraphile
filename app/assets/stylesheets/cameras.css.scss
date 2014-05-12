@@ -1,0 +1,31 @@
+// Place all the styles related to the cameras controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.camera-profile{
+  padding: 20px;
+  border: 1px solid black;
+  margin: 50px;
+  height: inherit;
+  width: 400px;
+  overflow: none;
+
+}
+
+.small-camera-image{
+  float: left;
+  padding-right: 40px;
+}
+
+.camera-stats {
+  margin: 40px;
+}
+
+
+.pic{
+  padding:10px;
+  height: inherit;
+  display: inline-block;
+  border: 1px solid black;
+}

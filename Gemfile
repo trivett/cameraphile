@@ -48,4 +48,5 @@ gem "httparty"
 gem "better_errors"
 gem 'pry-rails', :group => :development
 gem 'crack'
-# gem 'open-uri'
+gem 'masonry-rails'
+gem 'amazon-ecs'

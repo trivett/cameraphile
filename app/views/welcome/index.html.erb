@@ -1,0 +1,12 @@
+<h1>welcome index</h1>
+
+
+
+<% @photos.each do |photo| %>
+
+  <div class="picture">
+  <img src="<%= photo.photo_url %>" alt="">
+   <span class="credit"><%= photo.owner %></span>
+  </div>
+
+  <% end %>

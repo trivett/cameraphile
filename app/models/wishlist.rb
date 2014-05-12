@@ -1,6 +1,6 @@
 class Wishlist < ActiveRecord::Base
   belongs_to :user
-  has_many :cameras
+  has_and_belongs_to_many :cameras
 
 
 end

@@ -1,6 +1,7 @@
 require "open-uri"
 class Photo < ActiveRecord::Base
 
+#   validates :flickr_id, presence: true
 
   belongs_to :camera
 

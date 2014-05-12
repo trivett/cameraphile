@@ -11,22 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511013033) do
+ActiveRecord::Schema.define(version: 20140512161945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cameras", force: true do |t|
-    t.string  "brand"
-    t.string  "model"
-    t.string  "name"
-    t.string  "type"
-    t.integer "price"
-    t.string  "megapixels"
-    t.string  "memory_type"
-    t.string  "small_image_url"
-    t.string  "large_image_url"
-    t.string  "lcd_screen_size"
+    t.string "brand"
+    t.string "model"
+    t.string "name"
+    t.string "type"
+    t.string "megapixels"
+    t.string "memory_type"
+    t.string "small_image_url"
+    t.string "large_image_url"
+    t.string "lcd_screen_size"
+    t.string "price"
+  end
+
+  create_table "cameras_wishlists", force: true do |t|
+    t.integer "wishlist_id"
+    t.integer "camera_id"
   end
 
   create_table "photos", force: true do |t|

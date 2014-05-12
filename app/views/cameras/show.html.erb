@@ -1,0 +1,26 @@
+<div class="camera-show">
+
+   <%= image_tag @camera.large_image_url, :class => "large-camera-image" %>
+    <p><strong><%= @camera.name %></strong></p>
+
+    <ul class="camera-stats">
+      <li>Megapixels: <%= @camera.megapixels %></li>
+      <li>Memory type: <%= @camera.memory_type %></li>
+      <li>Price: <%= @camera.price %></li>
+    </ul>
+
+
+  <% if @photos %>
+
+    <% @photos.each do |photo| %>
+
+    <div class="pic">
+    <img src="<%= photo.photo_url %>" alt="">
+    <p class="credits"></p>
+
+    </div>
+    <% end %>
+
+
+  <% end %>
+</div>
