@@ -1,0 +1,38 @@
+// Place all the styles related to the wishlists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#comparison-tool{
+
+  width: auto;
+  height: 1000px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  white-space: nowrap;
+  display: inline-block;
+  margin:0;
+}
+
+.desire{
+  vertical-align: top;
+  width: 500px;
+  margin: 20px;
+  display: inline-block;
+  // min-height: 1000px;
+  height: 100%;
+  border: solid 1px;
+}
+
+.desire p {
+  text-align: center;
+}
+
+.desire img {
+  margin: 0 auto;
+  display: block;
+}
+
+.desire img.photo {
+  width: 100%;
+}

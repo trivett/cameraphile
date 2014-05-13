@@ -1,0 +1,22 @@
+<div id="comparison-tool">
+<% @cameras.each do |camera| %>
+
+  <div class="desire">
+
+    <img src="<%= camera.large_image_url %>" alt="">
+    <p><%= camera.name %></p>
+    <p><%= camera.price %></p>
+    <p>Megapixels: <%= camera.megapixels %></p>
+    <p>LCD size: <%= camera.lcd_screen_size %> in.</p>
+    <p>Memory type: <%= camera.memory_type %></p>
+
+      <% camera.photos.each do |photo| %>
+        <a href="/photos/<%= photo.id %>"><img class="photo" src="<%= photo.photo_url %>" alt=""></a>
+      <% end %>
+
+  </div>
+
+<% end %>
+
+</div>
+
