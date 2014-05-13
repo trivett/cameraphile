@@ -6,7 +6,7 @@ Camera.delete_all
 
   def get_interesting_photos
 
-    base = open("https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=#{$KEY}&format=rest")
+    base = open("https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=#{FLICKR_KEY}&format=rest")
 
     data = Crack::XML.parse(base)
     data_array = data["rsp"]["photos"]["photo"]
@@ -40,7 +40,7 @@ Camera.create(brand: "nikon", name: "Nikon D7000", megapixels: "16.2", memory_ty
 
 
 def add_cameras(brand)
-  full_url = "https://api.flickr.com/services/rest/?method=flickr.cameras.getBrandModels&api_key=#{$KEY}&brand=#{brand}"
+  full_url = "https://api.flickr.com/services/rest/?method=flickr.cameras.getBrandModels&api_key=#{FLICKR_KEY}&brand=#{brand}"
   raw_response = HTTParty.get(full_url)
   data = raw_response.to_hash
   brand_array = data["rsp"]["cameras"]["camera"]
