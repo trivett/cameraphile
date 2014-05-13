@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_one :wishlist
   has_many :cameras, through: :wishlists
 
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
