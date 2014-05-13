@@ -18,6 +18,8 @@ Cameraphile::Application.routes.draw do
     resources :wishlists
     post '/add_to_list' => "cameras#add_to_list"
 
+    get "/cameras/:name" => "cameras#show"
+
   # Example resource route with options:
   #   resources :products do
   #     member do

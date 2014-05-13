@@ -3,16 +3,50 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .picture{
-  border: 5px solid pink;
-  display: inline-block;
+  // border: 5px solid pink;
+  // display: inline-block;
   margin: 10px;
-  overflow: none;
+  float: left;
+  // height: inherit;
 }
+
+.frame{
+
+  position: absolute;
+  overflow: none;
+  max-width: 100%;
+  display: inline-block;
+}
+
+.title {
+  visibility: none;
+  // background-color: pink;
+  height: auto;
+  position: absolute;
+  width: inherit;
+  float: left;
+  // z-index: ;
+}
+
 .credit {
   position: absolute;
   margin-bottom: 0;
   background-color: pink;
 
-  width: inherit;
+  background-size: cover;
+
 }
 
+#masonry-container {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  clear: both;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
