@@ -1,3 +1,18 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.full-pic{
+  float: left;
+  max-width: 700px;
+}
+
+.photo-stats {
+  padding: 30px;
+  margin: 40px;
+  margin-top: 10px;
+  width: 300px;
+  float: left;
+
+}

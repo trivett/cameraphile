@@ -17,7 +17,7 @@ Cameraphile::Application.routes.draw do
     resources :photos
     resources :wishlists
     post '/add_to_list' => "cameras#add_to_list"
-
+    post 'cameras/remove_from_list' => "cameras#remove_from_list"
     get "/cameras/:name" => "cameras#show"
 
   # Example resource route with options:

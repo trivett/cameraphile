@@ -33,9 +33,9 @@ Camera.delete_all
 
 
 
-Camera.create(brand: "canon", name: "Canon EOS 5D Mark II", megapixels: "21.1", memory_type: "CompactFlash (CF) Card", small_image_url: "https://farm4.staticflickr.com/3154/cameras/72157607348761901_model_small_a874952616.jpg", large_image_url: "https://farm4.staticflickr.com/3154/cameras/72157607348761901_model_large_97198e11ef.jpg", price: "$2895")
+# Camera.create(brand: "canon", name: "Canon EOS 5D Mark II", megapixels: "21.1", memory_type: "CompactFlash (CF) Card", small_image_url: "https://farm4.staticflickr.com/3154/cameras/72157607348761901_model_small_a874952616.jpg", large_image_url: "https://farm4.staticflickr.com/3154/cameras/72157607348761901_model_large_97198e11ef.jpg", price: "$2895")
 
-Camera.create(brand: "nikon", name: "Nikon D7000", megapixels: "16.2", memory_type: "Secure Digital, SDHC, SDXC", small_image_url: "https://farm2.staticflickr.com/1425/cameras/72157624846412485_model_small_a42574ca6e.jpg", large_image_url: "https://farm2.staticflickr.com/1425/cameras/72157624846412485_model_large_194e38d197.jpg")
+# Camera.create(brand: "nikon", name: "Nikon D7000", megapixels: "16.2", memory_type: "Secure Digital, SDHC, SDXC", small_image_url: "https://farm2.staticflickr.com/1425/cameras/72157624846412485_model_small_a42574ca6e.jpg", large_image_url: "https://farm2.staticflickr.com/1425/cameras/72157624846412485_model_large_194e38d197.jpg")
 
 
 
@@ -72,7 +72,11 @@ brands.each do |b|
 end
 
 # Camera.where(:price => "Unknown").each do |c|
+
+# Camera.where(:price => "Unknown").each do |c|
 Camera.all.each do |c|
   c.photos << Photo.where(:camera_model => c.name)
-  c.get_price
+  # c.get_price
 end
+
+Camera.where(:price => "Unknown").count

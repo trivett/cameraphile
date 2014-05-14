@@ -1,2 +1,14 @@
-<img src="<%= @photo.photo_url %>" alt="">
-<h1><%= @photo.title %></h1>
+<img class="full-pic" src="<%= @photo.photo_url %>" alt="">
+
+<div class="photo-stats">
+  <h1><%= @photo.title %></h1>
+  <% if @photo.owner %>
+    <h2>by <%= @photo.owner %></h2>
+  <% end %>
+
+  <img src="<%= @camera.large_image_url %>" alt="">
+  <h3>Taken with a <%= link_to @camera.name, camera_path(@camera) %></h3>
+
+  <p>Lens: <%= @photo.lens %></p>
+  <p>Focal length: <%= @photo.focal_length %></p>
+</div>

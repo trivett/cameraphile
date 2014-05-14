@@ -1,7 +1,7 @@
 <div id="comparison-tool">
 <% @cameras.each do |camera| %>
 
-  <div class="desire">
+  <div class="desire" id="<%= camera.id %>">
 
     <img src="<%= camera.large_image_url %>" alt="">
     <p><%= camera.name %></p>
@@ -13,6 +13,14 @@
       <% camera.photos.each do |photo| %>
         <a href="/photos/<%= photo.id %>"><img class="photo" src="<%= photo.photo_url %>" alt=""></a>
       <% end %>
+
+      <div id="deleteWord">
+          <%= form_tag("/cameras/remove_from_list", method: "post", remote: true) do %>
+            <%= hidden_field_tag :camera_id, camera.id %>
+            <%= hidden_field_tag :wishlist_id, current_user.wishlist.id %>
+            <%= submit_tag "Delete", :id => "deleteButton", :class => "button tiny" %>
+           <% end %>
+        </div>
 
   </div>
 

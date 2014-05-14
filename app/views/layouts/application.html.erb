@@ -8,12 +8,7 @@
 </head>
 <body>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+
 
 
 <p class="navbar-text">
@@ -24,7 +19,14 @@
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
+  <%= link_to "Camera Directory", cameras_path, :class => 'navbar-link' %>
 </p>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
 
 <%= yield %>

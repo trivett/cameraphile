@@ -1,6 +1,6 @@
 <div class="camera-show">
 
-   <%= image_tag @camera.large_image_url, :class => "large-camera-image" %>
+   <%= image_tag @camera.large_image_url, :class => "large-camera-image", :class => "full-pic" %>
     <p><strong><%= @camera.name %></strong></p>
 
     <ul class="camera-stats">
@@ -15,7 +15,7 @@
     <% @photos.each do |photo| %>
 
     <div class="pic">
-    <img src="<%= photo.photo_url %>" alt="">
+    <a href="/photos/<%= photo.id %>"><img src="<%= photo.photo_url %>" alt=""></a>
     <p class="credits"></p>
 
     </div>

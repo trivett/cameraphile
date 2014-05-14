@@ -14,14 +14,20 @@ class CamerasController < ApplicationController
 
     @camera = Camera.find(params[:camera_id])
     @list = Wishlist.find(params[:wishlist_id])
-    @list.cameras << @camera
-
-    # response.cache_control.replace(:no_cache => true)
-
-    # respond_to do |format|
-    #   format.js { }
-    # end
-
+    unless @list.cameras.include?(@camera)
+      @list.cameras << @camera
+    end
   end
+
+  def remove_from_list
+    @camera = Camera.find(params[:camera_id])
+    @wishlist = Wishlist.find(params[:wishlist_id])
+      @wishlist.cameras.delete(@camera)
+    respond_to do |format|
+      format.js {}
+    end
+  end
+
+
 
 end
