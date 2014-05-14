@@ -1,10 +1,9 @@
 require "open-uri"
 class Photo < ActiveRecord::Base
 
-#   validates :flickr_id, presence: true
-
   belongs_to :camera
 
+  validates :flickr_id, uniqueness: true
 
   def get_photo_info
     # get basic photo info for photo

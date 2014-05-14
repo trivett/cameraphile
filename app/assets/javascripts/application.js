@@ -14,17 +14,21 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require jquery.ui.sortable
-
+//= require jquery.mixitup
 //= require turbolinks
 //= require masonry/jquery.masonry
 //= require_tree .
 
 var readyFunction;
 readyFunction = function() {
-  $('#Container').mixItUp();
+  // $('#Container').mixItUp();
   $("#comparison-tool").sortable({ axis: "x" });
   console.log("yup");
-  $(".pics-container").mixItUp();
+  $(".pics-container").mixItUp({
+    layout: {
+      display: 'block'
+    }
+  });
   console.log("yeah");
 
 };

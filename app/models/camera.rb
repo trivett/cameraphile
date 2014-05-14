@@ -4,6 +4,8 @@ class Camera < ActiveRecord::Base
   has_and_belongs_to_many :wishlists
   has_many :photos
 
+
+
   def get_price
     term = self.name.to_s
     puts term

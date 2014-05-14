@@ -25,8 +25,10 @@
   display: none;
 }
 
-.desire-photos .mix {
- display: none;
+.pics-container .mix {
+  display: none;
 }
 
-
+.pics-container a {
+  display: block;
+}

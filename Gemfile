@@ -45,7 +45,6 @@ end
 # gem 'debugger', group: [:development, :test]
 gem "devise"
 gem "httparty"
-gem "better_errors"
 gem 'pry-rails', :group => :development
 gem 'crack'
 gem 'masonry-rails'
@@ -54,3 +53,13 @@ gem 'rails_12factor', group: :production
 gem 'jquery-ui-rails'
 gem 'fractional'
 gem 'binding_of_caller'
+
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem "better_errors"
+  gem "shoulda-matchers"
+  gem "rails-erd"
+  gem "capybara"
+  gem 'simplecov', '~> 0.7.1'
+end

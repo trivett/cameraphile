@@ -88,7 +88,10 @@ end
 # Camera.where(:price => "Unknown").each do |c|
 Camera.all.each do |c|
   c.photos << Photo.where(:camera_model => c.name)
-  # c.get_price
+  c.get_price
 end
 
-Camera.where(:price => "Unknown").count
+
+Photo.each do |p|
+  p.create_categories
+end

@@ -1,7 +1,7 @@
 
 <div class="controls">
   <label>Filter:</label>
-  <button class="filter" data-filter="photo">All</button>
+  <button class="filter" data-filter=".photo">All</button>
   <% @types.each do |type| %>
   <button class="filter" data-filter=".<%= type %>"><%= type.upcase %></button>
   <% end %>
@@ -22,7 +22,7 @@
 
       <div class="pics-container" >
         <% camera.photos.each do |photo| %>
-          <a href="/photos/<%= photo.id %>"><img class="mix photo<%= photo.category %>" src="<%= photo.photo_url %>" alt=""></a>
+          <a href="/photos/<%= photo.id %>" class="mix photo<%= photo.category %>"><img class="photo" src="<%= photo.photo_url %>" alt=""></a>
         <% end %>
       </div>
 
