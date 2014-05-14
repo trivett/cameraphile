@@ -23,13 +23,13 @@ var readyFunction;
 readyFunction = function() {
   $('#Container').mixItUp();
   $("#comparison-tool").sortable({ axis: "x" });
-  console.log("yup");
+
   $(".pics-container").mixItUp({
     layout: {
       display: 'block'
     }
   });
-  console.log("yeah");
+
 };
 
 $(document).ready(readyFunction);
