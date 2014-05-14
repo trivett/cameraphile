@@ -18,20 +18,29 @@
 //= require turbolinks
 //= require masonry/jquery.masonry
 //= require_tree .
-$(function(){
 
+var readyFunction;
+readyFunction = function() {
   $('#Container').mixItUp();
+  $("#comparison-tool").sortable({ axis: "x" });
+  console.log("yup");
+  $(".pics-container").mixItUp();
+  console.log("yeah");
 
-$("#comparison-tool").sortable({ axis: "x" });
+};
+
+$(document).ready(readyFunction);
 
 
-});
+$(document).on('page:load', readyFunction);
+
+
 $(function(){
 
   $('#masonry-container').masonry({
     itemSelector: '.box',
     columnWidth: 100,
-    gutterWidth: 40
+    gutterWidth: 10
   });
 
 });

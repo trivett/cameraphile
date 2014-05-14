@@ -5,4 +5,8 @@
 
 $ '.add-button'
   .click ->
+    console.log("clicked")
+
+$ '.delete-button'
+  .click ->
     this.fadeOut()

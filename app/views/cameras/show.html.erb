@@ -1,6 +1,8 @@
 <div class="camera-show">
 
-   <%= image_tag @camera.large_image_url, :class => "large-camera-image", :class => "full-pic" %>
+
+     <%= image_tag @camera.large_image_url, :class => "large-camera-image", :class => "full-pic" %>
+
     <p><strong><%= @camera.name %></strong></p>
 
     <ul class="camera-stats">
@@ -8,6 +10,22 @@
       <li>Memory type: <%= @camera.memory_type %></li>
       <li>Price: <%= @camera.price %></li>
     </ul>
+      <!-- Add/Delete -->
+    <% if current_user && !current_user.wishlist.cameras.include?(@camera) %>
+      <%= form_tag "/add_to_list", :method => "post", remote: true do %>
+      <%= hidden_field_tag :camera_id, @camera.id %>
+      <%= hidden_field_tag :wishlist_id, current_user.id %>
+      <%= submit_tag "Add to wishlist", :class =>"add-button", :id => "add-#{@camera.id}"%>
+      <% end %>
+
+    <% elsif current_user && current_user.wishlist.cameras.include?(@camera) %>
+
+      <%= form_tag("/cameras/remove_from_list", method: "post", remote: true) do %>
+          <%= hidden_field_tag :camera_id, @camera.id %>
+          <%= hidden_field_tag :wishlist_id, current_user.wishlist.id %>
+          <%= submit_tag "Remove from wishlist", :class => "delete-button", :class => "button tiny" %>
+         <% end %>
+  <% end %>
 
 
   <% if @photos %>

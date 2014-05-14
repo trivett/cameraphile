@@ -1,14 +1,25 @@
 class CamerasController < ApplicationController
 
   def index
+
+  if current_user
+    @cameras = Camera.all - current_user.wishlist.cameras
+  else
     @cameras = Camera.all
+  end
     @brands = Camera.all.pluck(:brand).uniq
   end
+
+
 
   def show
     @camera = Camera.find(params[:id])
     @photos = Photo.where(:camera_model => @camera.name)
   end
+
+
+
+
 
   def add_to_list
 
@@ -17,6 +28,8 @@ class CamerasController < ApplicationController
     unless @list.cameras.include?(@camera)
       @list.cameras << @camera
     end
+
+    response.cache_control.replace(:no_cache => true)
 
     respond_to do |format|
       format.js {}

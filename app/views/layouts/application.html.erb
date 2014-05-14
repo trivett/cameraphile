@@ -8,9 +8,6 @@
 </head>
 <body>
 
-
-
-
 <p class="navbar-text">
 <% if user_signed_in? %>
   <%= link_to 'Your Camera Wishlist', "/wishlists/#{current_user.id}", :class => 'navbar-link' %> |
@@ -30,6 +27,9 @@
 
 
 <%= yield %>
-  <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+
+<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+
+
 </body>
 </html>

@@ -1,5 +1,15 @@
+
+<div class="controls">
+  <label>Filter:</label>
+  <button class="filter" data-filter="photo">All</button>
+  <% @types.each do |type| %>
+  <button class="filter" data-filter=".<%= type %>"><%= type.upcase %></button>
+  <% end %>
+</div>
+
 <div id="comparison-tool">
 <% @cameras.each do |camera| %>
+
 
   <div class="desire" id="<%= camera.id %>">
 
@@ -10,9 +20,11 @@
     <p>LCD size: <%= camera.lcd_screen_size %> in.</p>
     <p>Memory type: <%= camera.memory_type %></p>
 
-      <% camera.photos.each do |photo| %>
-        <a href="/photos/<%= photo.id %>"><img class="photo" src="<%= photo.photo_url %>" alt=""></a>
-      <% end %>
+      <div class="pics-container" >
+        <% camera.photos.each do |photo| %>
+          <a href="/photos/<%= photo.id %>"><img class="mix photo<%= photo.category %>" src="<%= photo.photo_url %>" alt=""></a>
+        <% end %>
+      </div>
 
       <div id="deleteWord">
           <%= form_tag("/cameras/remove_from_list", method: "post", remote: true) do %>
@@ -27,4 +39,5 @@
 <% end %>
 
 </div>
+
 

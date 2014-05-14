@@ -7,10 +7,12 @@
   <button class="filter" data-filter=".<%= brand %>"><%= brand.upcase %></button>
   <% end %>
 </div>
+
+
 <div id="Container" class="camera-list">
 <% @cameras.sort_by {|c| c.photos.count}.reverse.each do |camera| %>
 
-<div class="mix <%= camera.brand %> camera-profile">
+<div class="mix <%= camera.brand %>  camera-profile" id="<%= camera.id %>">
   <%= image_tag camera.small_image_url, :class => "small-camera-image" %>
   <p><strong><%= camera.name %></strong></p>
 
@@ -20,7 +22,7 @@
     <li>Price: <%= camera.price %></li>
   </ul>
 
-  <% if current_user %>
+  <% if current_user && !current_user.wishlist.cameras.include?(@camera) %>
     <%= form_tag "/add_to_list", :method => "post", remote: true do %>
     <%= hidden_field_tag :camera_id, camera.id %>
     <%= hidden_field_tag :wishlist_id, current_user.id %>

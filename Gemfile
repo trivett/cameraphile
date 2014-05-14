@@ -52,3 +52,5 @@ gem 'masonry-rails'
 gem 'amazon-ecs'
 gem 'rails_12factor', group: :production
 gem 'jquery-ui-rails'
+gem 'fractional'
+gem 'binding_of_caller'

@@ -31,6 +31,18 @@ Camera.delete_all
     end
   end
 
+  Photo.all.each do |p|
+    begin
+      p.create_categories
+    rescue
+      puts "didn't work"
+    else
+      p.create_categories
+      puts "worked"
+      p.save
+    end
+  end
+
 
 
 # Camera.create(brand: "canon", name: "Canon EOS 5D Mark II", megapixels: "21.1", memory_type: "CompactFlash (CF) Card", small_image_url: "https://farm4.staticflickr.com/3154/cameras/72157607348761901_model_small_a874952616.jpg", large_image_url: "https://farm4.staticflickr.com/3154/cameras/72157607348761901_model_large_97198e11ef.jpg", price: "$2895")

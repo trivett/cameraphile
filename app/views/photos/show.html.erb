@@ -6,9 +6,16 @@
     <h2>by <%= @photo.owner %></h2>
   <% end %>
 
-  <img src="<%= @camera.large_image_url %>" alt="">
+  <% if @camera.large_image_url != "" %>
+    <img src="<%= @camera.large_image_url %>" alt="">
+  <% end %>
   <h3>Taken with a <%= link_to @camera.name, camera_path(@camera) %></h3>
 
   <p>Lens: <%= @photo.lens %></p>
   <p>Focal length: <%= @photo.focal_length %></p>
+  <p>Exposure: <%= @photo.exposure_time %></p>
+  <p>Aperature: <%= @photo.aperature %></p>
+  <p>ISO Speed: <%= @photo.iso_speed %></p>
+  <p>Categories: <%= @photo.category %></p>
+  <p><%= link_to "See this photo on Flickr!", "#{@photo.photopage}" %></p>
 </div>

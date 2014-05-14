@@ -5,9 +5,6 @@ class Photo < ActiveRecord::Base
 
   belongs_to :camera
 
-  # validate for camera and flickr_id
-
-
 
   def get_photo_info
     # get basic photo info for photo
@@ -49,20 +46,51 @@ class Photo < ActiveRecord::Base
 
     # get sizes for separate flickr request
 
-  sizes_response = open("https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=#{FLICKR_KEY}&photo_id=#{self.flickr_id}&format=rest")
+    sizes_response = open("https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=#{FLICKR_KEY}&photo_id=#{self.flickr_id}&format=rest")
 
-  size_data = Crack::XML.parse(sizes_response)
+    size_data = Crack::XML.parse(sizes_response)
 
-  all_sizes = size_data["rsp"]["sizes"]["size"]
+    all_sizes = size_data["rsp"]["sizes"]["size"]
 
-  all_sizes.each do |item|
-    if item["label"] == "Large"
-      self.photo_url = item["source"]
+    all_sizes.each do |item|
+      if item["label"] == "Large"
+        self.photo_url = item["source"]
+      end
     end
+    self.save
   end
-  self.save
-end
 
+  # create_categories makes a string of space-separated types which will be used as classes in view
+
+  def create_categories
+    self.category = ""
+
+    if self.focal_length.to_f > 75
+      self.category << " telephoto"
+    elsif self.focal_length.to_f < 35
+      self.category << " macro"
+    end
+
+    if self.iso_speed.to_i > 1600
+      self.category << " low-light"
+    elsif self.iso_speed.to_i < 200
+      self.category << " rich"
+    end
+
+    if self.aperature.to_f < 3.5
+      self.category << " bokeh"
+    elsif self.aperature.to_f > 16
+      self.category << " landscape"
+    end
+
+    if Fractional.new(self.exposure_time) < 0.001
+      self.category << " high-speed"
+    elsif Fractional.new(self.exposure_time) > 0.06
+      self.category << " long-exposure"
+    end
+
+    self.save
+  end
 
 end
 
