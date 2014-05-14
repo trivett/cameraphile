@@ -16,6 +16,8 @@
  *= require 'masonry/infinitescroll'
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
+ *= require jquery.ui.all
+
  *= require_tree .
  */
 

@@ -51,3 +51,4 @@ gem 'crack'
 gem 'masonry-rails'
 gem 'amazon-ecs'
 gem 'rails_12factor', group: :production
+gem 'jquery-ui-rails'

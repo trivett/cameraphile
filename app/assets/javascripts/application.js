@@ -12,12 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
+//= require jquery.ui.sortable
+
 //= require turbolinks
 //= require masonry/jquery.masonry
 //= require_tree .
 $(function(){
 
   $('#Container').mixItUp();
+
+$("#comparison-tool").sortable({ axis: "x" });
+
 
 });
 $(function(){
