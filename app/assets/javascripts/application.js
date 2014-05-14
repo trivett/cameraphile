@@ -21,7 +21,7 @@
 
 var readyFunction;
 readyFunction = function() {
-  // $('#Container').mixItUp();
+  $('#Container').mixItUp();
   $("#comparison-tool").sortable({ axis: "x" });
   console.log("yup");
   $(".pics-container").mixItUp({

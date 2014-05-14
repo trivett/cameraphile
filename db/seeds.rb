@@ -31,7 +31,7 @@ Camera.delete_all
     end
   end
 
-  Photo.all.each do |p|
+  Photo.where(:category => nil).each do |p|
     begin
       p.create_categories
     rescue
@@ -91,7 +91,3 @@ Camera.all.each do |c|
   c.get_price
 end
 
-
-Photo.each do |p|
-  p.create_categories
-end
