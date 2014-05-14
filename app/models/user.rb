@@ -9,5 +9,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  before_validation(on: :create) do
+    self.wishlist = Wishlist.new
+  end
 
 end

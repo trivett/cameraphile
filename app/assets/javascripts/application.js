@@ -30,7 +30,6 @@ readyFunction = function() {
     }
   });
   console.log("yeah");
-
 };
 
 $(document).ready(readyFunction);

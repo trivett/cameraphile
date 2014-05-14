@@ -3,12 +3,12 @@ class Photo < ActiveRecord::Base
 
   belongs_to :camera
 
-  validates :flickr_id, uniqueness: true
+  validates_uniqueness_of :flickr_id
 
-  def get_photo_info
-    # get basic photo info for photo
 
+  def get_owner_title_photopage
     full_url = "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=#{FLICKR_KEY}&photo_id=#{self.flickr_id}&format=rest"
+
     raw_response = HTTParty.get(full_url)
     data = raw_response.to_hash
     photo_info = data["rsp"]["photo"]
@@ -16,14 +16,15 @@ class Photo < ActiveRecord::Base
     self.owner = photo_info["owner"]["realname"]
     self.title = photo_info["title"]
     self.photopage = photo_info["urls"]["url"]["__content__"]
+    self.save
+  end
 
-    ## exif data request
-
+  def get_exif
     exif_response = open("https://api.flickr.com/services/rest/?method=flickr.photos.getExif&api_key=#{FLICKR_KEY}&photo_id=#{self.flickr_id}&format=rest")
+
     exif_data = Crack::XML.parse(exif_response)
 
     self.camera_model = exif_data["rsp"]["photo"]["camera"]
-
 
     exif_data["rsp"]["photo"]["exif"].each do |item|
       if item["tag"] == "ExposureTime"
@@ -42,15 +43,13 @@ class Photo < ActiveRecord::Base
         self.lens = item["raw"]
       end
     end
+    self.save
+  end
 
-    # get sizes for separate flickr request
-
+  def get_jpeg_url
     sizes_response = open("https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=#{FLICKR_KEY}&photo_id=#{self.flickr_id}&format=rest")
-
     size_data = Crack::XML.parse(sizes_response)
-
     all_sizes = size_data["rsp"]["sizes"]["size"]
-
     all_sizes.each do |item|
       if item["label"] == "Large"
         self.photo_url = item["source"]
@@ -62,7 +61,7 @@ class Photo < ActiveRecord::Base
   # create_categories makes a string of space-separated types which will be used as classes in view
 
   def create_categories
-    self.category = ""
+    self.category = " "
 
     if self.focal_length.to_f > 75
       self.category << " telephoto"
