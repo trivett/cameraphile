@@ -81,14 +81,84 @@ class Photo < ActiveRecord::Base
       self.category << " landscape"
     end
 
-    if Fractional.new(self.exposure_time) < 0.001
-      self.category << " high-speed"
-    elsif Fractional.new(self.exposure_time) > 0.06
-      self.category << " long-exposure"
+    if self.exposure_time
+      if Fractional.new(self.exposure_time) < 0.001
+        self.category << " high-speed"
+      elsif Fractional.new(self.exposure_time) > 0.06
+        self.category << " long-exposure"
+      end
     end
 
     self.save
   end
+
+  # the following will be used by the chron job defined in ./config/schedule.rb
+##############################################
+
+# this method gets today's interesting photos from flickr
+
+  def self.get_interesting_photos
+  new_interesting_photos = []
+    base = open("https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=#{FLICKR_KEY}&format=rest")
+
+    data = Crack::XML.parse(base)
+    data_array = data["rsp"]["photos"]["photo"]
+
+    data_array.each do |item|
+       new_interesting_photos << Photo.create(flickr_id: item["id"])
+    end
+    return new_interesting_photos
+  end
+
+
+  # method for grabbing all the data for one photo
+
+  def flesh_out_new_photos
+    begin
+      self.get_owner_title_photopage
+      self.get_exif
+      self.get_jpeg_url
+      self.create_categories
+
+      if Camera.where(:name => self.camera_model).count > 0
+        self.camera = Camera.find_by(:name => self.camera_model)
+        Camera.find_by(:name => self.camera_model).photos << self
+      end
+
+      self.save
+    rescue
+      puts ""
+      puts "didn't work"
+      puts ""
+    else
+      self.get_owner_title_photopage
+      self.get_exif
+      self.get_jpeg_url
+      self.create_categories
+     if Camera.where(:name => self.camera_model).count > 0
+        self.camera = Camera.find_by(:name => self.camera_model)
+        Camera.find_by(:name => self.camera_model).photos << self
+      end
+
+      self.save
+    end
+  end
+
+  #Flickr's api sometimes takes a moment, so some things error out
+
+  def try_to_get_data
+    20.times do
+      Photo.where(:photo_url => nil).each do |p|
+        p.flesh_out_new_photos
+      end
+    end
+    puts Photo.where(:photo_url => nil).count
+    Photo.where(:photo_url => nil).each do |p|
+      p.delete
+    end
+  end
+
+
 
 end
 

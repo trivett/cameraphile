@@ -2,46 +2,6 @@
 require "httparty"
 require "open-uri"
 
-Camera.delete_all
-
-  def get_interesting_photos
-
-    base = open("https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=#{FLICKR_KEY}&format=rest")
-
-    data = Crack::XML.parse(base)
-    data_array = data["rsp"]["photos"]["photo"]
-
-    data_array.each do |item|
-      p = Photo.create(flickr_id: item["id"])
-    end
-  end
-
-  get_interesting_photos
-
-
-  Photo.all.each do |p|
-    begin
-      p.get_photo_info
-    rescue
-      puts "didn't work (photo)"
-    else
-      p.get_photo_info
-      puts "worked (photo)"
-      p.save
-    end
-  end
-
-  Photo.where(:category => nil).each do |p|
-    begin
-      p.create_categories
-    rescue
-      puts "didn't work"
-    else
-      p.create_categories
-      puts "worked"
-      p.save
-    end
-  end
 
 
 
@@ -83,11 +43,5 @@ brands.each do |b|
   end
 end
 
-# Camera.where(:price => "Unknown").each do |c|
 
-# Camera.where(:price => "Unknown").each do |c|
-Camera.all.each do |c|
-  c.photos << Photo.where(:camera_model => c.name)
-  c.get_price
-end
 

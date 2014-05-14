@@ -63,3 +63,4 @@ group :development, :test do
   gem "capybara"
   gem 'simplecov', '~> 0.7.1'
 end
+gem 'whenever', :require => false
