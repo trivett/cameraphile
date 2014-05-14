@@ -17,6 +17,10 @@ class CamerasController < ApplicationController
     unless @list.cameras.include?(@camera)
       @list.cameras << @camera
     end
+
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   def remove_from_list

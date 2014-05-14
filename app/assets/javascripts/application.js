@@ -16,7 +16,9 @@
 //= require masonry/jquery.masonry
 //= require_tree .
 $(function(){
+
   $('#Container').mixItUp();
+
 });
 $(function(){
 
