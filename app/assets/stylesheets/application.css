@@ -25,6 +25,9 @@
 
 @import url(http://fonts.googleapis.com/css?family=Cantarell);
 
+#Container .mix{
+  display: none;
+}
 
 body{
   background-color: #656D78;
@@ -33,10 +36,6 @@ body{
 
 
 
-#Container .mix{
-  display: none;
-
-}
 
 .controls{
   width: 100%;
@@ -46,8 +45,6 @@ body{
   line-height: 1.5em;
 }
 
-
-
 .camera-profile{
   width: 400px;
   background-color: #FFF;
@@ -55,12 +52,9 @@ body{
 
 }
 
-
-
 h1,h2,h3 {
   font-family: 'Cantarell', sans-serif;
 }
-
 
 a.btn {
  font-family: 'Cantarell', sans-serif;
@@ -116,5 +110,6 @@ btn-info {
   width: 95%;
   margin: 0 auto;
   margin-top: 90px;
-  z-index: 0
+  z-index: 0;
+  display: block;
 }

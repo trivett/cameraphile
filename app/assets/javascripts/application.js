@@ -40,8 +40,9 @@ readyFunction = function() {
       gutterWidth: 10
     });
     this.css("z-index", "0");
-    $(".navbar-collapse").css("z-index", "5");
   });
+
+  $(".navbar-collapse").css("z-index", "5");
 
 };
 
