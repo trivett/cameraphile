@@ -22,6 +22,7 @@
 //= require_tree .
 
 var readyFunction;
+var mason;
 readyFunction = function() {
   $('#Container').mixItUp();
   $("#comparison-tool").sortable({ axis: "x" });
@@ -29,13 +30,10 @@ readyFunction = function() {
   $(".pics-container").mixItUp({
     layout: {
       display: 'block'
-
     }
+  });
 
-
-});
-
-  $(function(){
+   $(function(){
     $('#masonry-container').masonry({
       itemSelector: '.box',
       columnWidth: 100,
@@ -45,11 +43,17 @@ readyFunction = function() {
 
 };
 
+
+
+
+
 $(document).ready(readyFunction);
+$(document).ready(mason);
 
 
 $(document).on('page:load', readyFunction);
 
+$(document).on('page:load', mason);
 
 
 
