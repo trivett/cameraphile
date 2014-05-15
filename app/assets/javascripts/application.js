@@ -23,41 +23,41 @@
 
 var readyFunction;
 
-// readyFunction = function() {
-//   $(".navbar-collapse").css("z-index", "5");
-//   $('#Container').mixItUp();
-//   $("#comparison-tool").sortable({ axis: "x" });
+readyFunction = function() {
+  $(".navbar-collapse").css("z-index", "5");
+  $('#Container').mixItUp();
+  $("#comparison-tool").sortable({ axis: "x" });
 
-//   $(".pics-container").mixItUp({
-//     layout: {
-//       display: 'block'
-//     };
-//   });
+  $(".pics-container").mixItUp({
+    layout: {
+      display: 'block'
+    }
+  });
 
-//    $(function(){
-//     $('#masonry-container').masonry({
-//       itemSelector: '.box',
-//       columnWidth: 100,
-//       gutterWidth: 10
-//     });
-//     $("#main").css("z-index", "0");
-//     console.log("masonry firing");
-//   });
-
-
-// };
+   $(function(){
+    $('#masonry-container').masonry({
+      itemSelector: '.box',
+      columnWidth: 100,
+      gutterWidth: 10
+    });
+    $("#main").css("z-index", "0");
+    console.log("masonry firing");
+  });
 
 
-// console.log("before doc ready");
+};
+
+
+console.log("before doc ready");
 
 
 
-// $(document).ready(readyFunction);
-// console.log("between doc ready and page load");
+$(document).ready(readyFunction);
+console.log("between doc ready and page load");
 
-// $(document).on('page:load', readyFunction);
+$(document).on('page:load', readyFunction);
 
-// console.log("page load");
+console.log("page load");
 
 
 
