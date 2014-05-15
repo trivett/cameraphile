@@ -28,6 +28,7 @@ readyFunction = function() {
     layout: {
       display: 'block'
     }
+
   });
 
 };

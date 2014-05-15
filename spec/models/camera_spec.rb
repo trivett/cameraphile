@@ -12,4 +12,9 @@ describe Camera do
     expect(camera.price).to eq("$1,299.00")
   end
 
+  it "should get the asin from Amazon" do
+    camera.get_asin
+    expect(camera.asin).to eq("B002NEGTTW")
+  end
+
 end

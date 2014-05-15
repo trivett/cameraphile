@@ -119,12 +119,10 @@ class Photo < ActiveRecord::Base
       self.get_exif
       self.get_jpeg_url
       self.create_categories
-
       if Camera.where(:name => self.camera_model).count > 0
         self.camera = Camera.find_by(:name => self.camera_model)
         Camera.find_by(:name => self.camera_model).photos << self
       end
-
       self.save
     rescue
       puts ""
@@ -139,14 +137,13 @@ class Photo < ActiveRecord::Base
         self.camera = Camera.find_by(:name => self.camera_model)
         Camera.find_by(:name => self.camera_model).photos << self
       end
-
       self.save
     end
   end
 
   #Flickr's api sometimes takes a moment, so some things error out
 
-  def try_to_get_data
+  def self.try_to_get_data
     20.times do
       Photo.where(:photo_url => nil).each do |p|
         p.flesh_out_new_photos

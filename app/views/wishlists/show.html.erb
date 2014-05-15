@@ -18,7 +18,9 @@
     <p><%= camera.price %></p>
     <p>Megapixels: <%= camera.megapixels %></p>
     <p>LCD size: <%= camera.lcd_screen_size %> in.</p>
+    <p><%= link_to "More info on this camera", camera_path(camera.id) %></p>
     <p>Memory type: <%= camera.memory_type %></p>
+    <p><%= link_to "Amazon", "http://www.amazon.com/exec/obidos/ASIN/#{camera.asin}/camer0a5-20"  %></p>
 
       <div class="pics-container" >
         <% camera.photos.each do |photo| %>

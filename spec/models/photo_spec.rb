@@ -56,4 +56,11 @@ describe Photo do
     Photo.get_interesting_photos
     expect(Photo.all.count).to eq(count + 100)
   end
+
+  # it "tries to get data from db" do
+  #   Photo.get_interesting_photos
+  #   count = Photo.all.count
+  #   Photo.try_to_get_data
+  #   expect(Photo.all.count).not_to eq(count)
+  # end
 end

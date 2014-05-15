@@ -29,4 +29,22 @@ class Camera < ActiveRecord::Base
   end
 
 
+  def get_asin
+    term = self.name.to_s
+    puts term
+    begin
+      res = Amazon::Ecs.item_search(term, {:search_index => "Photo"})
+      response = res.first_item.get_element("ASIN").get_unescaped
+      if response
+        self.update(asin: response)
+      end
+    rescue
+      puts "error"
+      self.price = "Unknown"
+    else
+      self.update(asin: response) || self.update(asin: "Unknown")
+    end
+    self.save
+  end
+
 end

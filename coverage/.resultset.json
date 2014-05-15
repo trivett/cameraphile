@@ -33,6 +33,24 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        0,
+        0,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/vincent/Desktop/cameraphile/spec/models/photo_spec.rb": [
@@ -93,6 +111,13 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
@@ -218,11 +243,9 @@
         1,
         1,
         1,
-        null,
         1,
         0,
         0,
-        null,
         null,
         1,
         null,
@@ -237,7 +260,6 @@
         1,
         0,
         0,
-        null,
         null,
         1,
         null,
@@ -297,6 +319,6 @@
         null
       ]
     },
-    "timestamp": 1400111317
+    "timestamp": 1400114724
   }
 }
