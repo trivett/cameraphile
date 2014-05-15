@@ -57,8 +57,4 @@ console.log("between doc ready and page load");
 
 $(document).on('page:load', readyFunction);
 
-console.log("page load");
 
-
-
-console.log("got it")
