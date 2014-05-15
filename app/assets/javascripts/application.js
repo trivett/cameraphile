@@ -39,6 +39,8 @@ readyFunction = function() {
       columnWidth: 100,
       gutterWidth: 10
     });
+    this.css("z-index", "0");
+    $(".navbar-collapse").css("z-index", "5");
   });
 
 };
@@ -53,7 +55,6 @@ $(document).ready(mason);
 
 $(document).on('page:load', readyFunction);
 
-$(document).on('page:load', mason);
 
 
 
