@@ -31,7 +31,7 @@ readyFunction = function() {
   $(".pics-container").mixItUp({
     layout: {
       display: 'block'
-    }
+    };
   });
 
    $(function(){
@@ -41,7 +41,7 @@ readyFunction = function() {
       gutterWidth: 10
     });
     $("#main").css("z-index", "0");
-    console.log("masonry firing")
+    console.log("masonry firing");
   });
 
 
