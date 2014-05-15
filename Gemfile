@@ -65,7 +65,6 @@ group :development, :test do
 end
 
 
-gem 'factory_girl_rails'
 gem 'bootflat-rails'
 gem 'sass-rails', :git => 'https://github.com/zakelfassi/sass-rails' # Until the gem is officially updated.
 
