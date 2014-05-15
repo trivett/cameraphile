@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+<div class="collapse navbar-collapse" id="nav">
 
   <%= link_to image_tag('logo.png'), root_path, :class => 'logo' %>
 
@@ -24,14 +24,14 @@
 
   </p>
   <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
+    <p class="alert"><%= notice %></p>
   <% end %>
   <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+    <p class="alert"><%= alert %></p>
   <% end %>
   </div>
 
-
+<div id="main">
 
 
 <%= yield %>

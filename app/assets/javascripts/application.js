@@ -29,7 +29,22 @@ readyFunction = function() {
   $(".pics-container").mixItUp({
     layout: {
       display: 'block'
+
     }
+
+
+});
+
+  $(function(){
+
+  $('#masonry-container').masonry({
+    itemSelector: '.box',
+    columnWidth: 100,
+    gutterWidth: 10
+  });
+
+
+
 
   });
 
@@ -41,15 +56,6 @@ $(document).ready(readyFunction);
 $(document).on('page:load', readyFunction);
 
 
-$(function(){
-
-  $('#masonry-container').masonry({
-    itemSelector: '.box',
-    columnWidth: 100,
-    gutterWidth: 10
-  });
-
-});
 
 
 
