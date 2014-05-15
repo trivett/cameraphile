@@ -51,7 +51,6 @@ readyFunction = function() {
 
 
 $(document).ready(readyFunction);
-$(document).ready(mason);
 
 
 $(document).on('page:load', readyFunction);
