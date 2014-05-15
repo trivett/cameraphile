@@ -3,9 +3,10 @@
 
      <%= image_tag @camera.large_image_url, :class => "large-camera-image", :class => "full-pic" %>
 
-    <p><strong><%= @camera.name %></strong></p>
+
 
     <ul class="camera-stats">
+      <li><strong class="camera-name"><%= @camera.name %></strong></li>
       <li>Megapixels: <%= @camera.megapixels %></li>
       <li>Memory type: <%= @camera.memory_type %></li>
       <li>Price: <%= @camera.price %></li>
