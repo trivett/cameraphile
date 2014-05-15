@@ -24,6 +24,7 @@
 var readyFunction;
 var mason;
 readyFunction = function() {
+  $(".navbar-collapse").css("z-index", "5");
   $('#Container').mixItUp();
   $("#comparison-tool").sortable({ axis: "x" });
 
@@ -39,23 +40,24 @@ readyFunction = function() {
       columnWidth: 100,
       gutterWidth: 10
     });
-    this.css("z-index", "0");
+    $("#main").css("z-index", "0");
+    console.log("masonry firing")
   });
 
-  $(".navbar-collapse").css("z-index", "5");
 
 };
 
 
+console.log("before doc ready");
 
 
 
 $(document).ready(readyFunction);
-
+console.log("between doc ready and page load");
 
 $(document).on('page:load', readyFunction);
 
-
+console.log("page load");
 
 
 
