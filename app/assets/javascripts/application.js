@@ -36,16 +36,11 @@ readyFunction = function() {
 });
 
   $(function(){
-
-  $('#masonry-container').masonry({
-    itemSelector: '.box',
-    columnWidth: 100,
-    gutterWidth: 10
-  });
-
-
-
-
+    $('#masonry-container').masonry({
+      itemSelector: '.box',
+      columnWidth: 100,
+      gutterWidth: 10
+    });
   });
 
 };

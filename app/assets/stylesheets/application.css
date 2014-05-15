@@ -73,7 +73,7 @@ a.btn {
   top:0;
   position: fixed;
   margin-bottom: 10px;
-  z-index: 3;
+  z-index: 5;
 }
 
 #main {
