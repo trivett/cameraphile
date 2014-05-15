@@ -121,3 +121,16 @@ btn-info {
   background-color: #F5F7FA;
 }
 
+.camera-show, p {
+  margin-left: 250px;
+
+}
+
+
+.camera-show, .camera-stats{
+  margin-left: 250px;
+}
+
+.camera-show, .camera-stats li {
+  list-style: none;
+}
