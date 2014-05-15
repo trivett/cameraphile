@@ -127,10 +127,10 @@ btn-info {
 }
 
 
-.camera-show, .camera-stats{
+.camera-show .camera-stats{
   margin-left: 250px;
 }
 
-.camera-show, .camera-stats li {
+.camera-show .camera-stats li {
   list-style: none;
 }
