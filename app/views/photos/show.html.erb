@@ -7,7 +7,13 @@
   <% end %>
 
 
-  <h3>Taken with a <%= link_to @camera.name, camera_path(@camera) %></h3>
+  <% if Camera.find_by(:name => @photo.camera_model) %>
+    <h3>Taken with a <%= link_to @camera.name, camera_path(@camera) %></h3>
+    <img src="<%= @camera.large_image_url %>" alt="">
+  <% else %>
+    <h3>Taken with a <%= @photo.camera_model %></h3>
+  <% end %>
+
 
   <p>Lens: <%= @photo.lens %></p>
   <p>Focal length: <%= @photo.focal_length %></p>
