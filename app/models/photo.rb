@@ -31,7 +31,7 @@ class Photo < ActiveRecord::Base
         self.exposure_time = item["raw"]
       end
       if item["tag"] == "FNumber"
-        self.aperature = item["raw"]
+        self.aperture = item["raw"]
       end
       if item["tag"] == "ISO"
         self.iso_speed = item["raw"]
@@ -75,9 +75,9 @@ class Photo < ActiveRecord::Base
       self.category << " rich"
     end
 
-    if self.aperature.to_f < 3.5
+    if self.aperture.to_f < 3.5
       self.category << " bokeh"
-    elsif self.aperature.to_f > 16
+    elsif self.aperture.to_f > 16
       self.category << " landscape"
     end
 

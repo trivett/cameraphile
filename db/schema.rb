@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515002515) do
+ActiveRecord::Schema.define(version: 20140515105504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140515002515) do
     t.string "focal_length"
     t.string "lens"
     t.string "exposure_time"
-    t.string "aperature"
+    t.string "aperture"
     t.string "iso_speed"
     t.string "category"
   end

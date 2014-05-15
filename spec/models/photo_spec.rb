@@ -18,7 +18,7 @@ describe Photo do
     pic.get_exif
     expect(pic.camera_model).to eq("Fujifilm X-E1")
     expect(pic.exposure_time).to eq("1/2200")
-    expect(pic.aperature).to eq("1.4")
+    expect(pic.aperture).to eq("1.4")
     expect(pic.iso_speed).to eq("0")
     expect(pic.focal_length).to eq("35.0 mm")
     expect(pic.lens).to eq("XF35mmF1.4 R")
@@ -43,7 +43,7 @@ describe Photo do
     expect(pic.photopage).to eq("https://www.flickr.com/photos/32065742@N06/14000374440/")
     expect(pic.camera_model).to eq("Fujifilm X-E1")
     expect(pic.exposure_time).to eq("1/2200")
-    expect(pic.aperature).to eq("1.4")
+    expect(pic.aperture).to eq("1.4")
     expect(pic.iso_speed).to eq("0")
     expect(pic.focal_length).to eq("35.0 mm")
     expect(pic.lens).to eq("XF35mmF1.4 R")
