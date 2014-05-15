@@ -28,11 +28,11 @@
         <% end %>
       </div>
 
-      <div id="deleteWord">
+      <div id="delete-camera">
           <%= form_tag("/cameras/remove_from_list", method: "post", remote: true) do %>
             <%= hidden_field_tag :camera_id, camera.id %>
             <%= hidden_field_tag :wishlist_id, current_user.wishlist.id %>
-            <%= submit_tag "Delete", :id => "deleteButton", :class => "button tiny" %>
+            <%= submit_tag "Remove from list", :id => "deleteButton", :class => "button tiny" %>
            <% end %>
         </div>
 

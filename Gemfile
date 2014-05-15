@@ -54,7 +54,6 @@ gem 'jquery-ui-rails'
 gem 'fractional'
 gem 'binding_of_caller'
 gem 'figaro'
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem "better_errors"
