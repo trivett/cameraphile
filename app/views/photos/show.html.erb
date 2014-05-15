@@ -6,9 +6,7 @@
     <h2>by <%= @photo.owner %></h2>
   <% end %>
 
-  <% if @camera.large_image_url %>
-    <img src="<%= @camera.large_image_url %>" alt="">
-  <% end %>
+
   <h3>Taken with a <%= link_to @camera.name, camera_path(@camera) %></h3>
 
   <p>Lens: <%= @photo.lens %></p>
