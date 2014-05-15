@@ -113,3 +113,11 @@ btn-info {
   z-index: 0;
   display: block;
 }
+
+
+.modal-content{
+  padding: 20px;
+  padding-left: 40px;
+  background-color: #F5F7FA;
+}
+

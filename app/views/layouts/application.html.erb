@@ -10,16 +10,17 @@
 
 <div class="collapse navbar-collapse" id="nav">
 
+
   <%= link_to image_tag('logo.png'), root_path, :class => 'logo' %>
 
   <p class="navbar-text">
   <%= link_to "Camera Directory", cameras_path, :class => 'btn btn-danger navbar-btn' %>
   <% if user_signed_in? %>
     <%= link_to 'Your Camera Wishlist', "/wishlists/#{current_user.id}", :class => 'btn btn-danger navbar-btn' %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-danger navbar-btn'  %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-primary navbar-btn'  %>
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-danger navbar-btn'  %>
-    <%= link_to "Login", new_user_session_path, :class => 'btn btn-danger navbar-btn'  %>
+    <button class="btn btn-primary" data-toggle="modal" data-target=".signup-modal">Sign Up</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target=".login-modal">Log In</button>
   <% end %>
 
   </p>
@@ -32,6 +33,57 @@
   </div>
 
 <div id="main">
+
+<div class="modal fade login-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <h2>Sign in</h2>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div><%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %></div>
+
+          <div><%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %></div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+          <% end -%>
+
+          <div><%= f.submit "Sign in", :class => "signin-button btn btn-info" %></div>
+        <% end %>
+
+        <%= link_to "Forgot your password?", "/users/password/new" %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade signup-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <h2>Sign up</h2>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div><%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %></div>
+
+          <div><%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %></div>
+
+          <div><%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+          <div><%= f.submit "Sign up", :class => "btn btn-info" %></div>
+        <% end %>
+
+
+      <%= link_to "Forgot your password?", "/users/password/new" %>
+    </div>
+  </div>
+</div>
+
 
 
 <%= yield %>
