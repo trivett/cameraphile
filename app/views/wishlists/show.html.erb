@@ -1,15 +1,14 @@
 
-<div class="controls">
+<div class="controls photo-type">
   <label>Filter:</label>
   <button class="filter btn btn-danger" data-filter=".photo">All</button>
   <% @types.each do |type| %>
-  <button class="filter btn btn-info" data-filter=".<%= type %>"><%= type.upcase %></button>
+  <button class="filter btn btn-info-block" data-filter=".<%= type %>"><%= type.upcase %></button>
   <% end %>
 </div>
 
 <div id="comparison-tool">
 <% @cameras.each do |camera| %>
-
 
   <div class="desire" id="<%= camera.id %>">
 
@@ -21,20 +20,19 @@
     <p><%= link_to "More info on this camera", camera_path(camera.id) %></p>
     <p>Memory type: <%= camera.memory_type %></p>
     <p><%= link_to image_tag('amazon_buy_button.gif'), "http://www.amazon.com/exec/obidos/ASIN/#{camera.asin}/camer0a5-20"  %></p>
+    <p class="delete-camera">
+          <%= form_tag("/cameras/remove_from_list", method: "post", remote: true) do %>
+            <%= hidden_field_tag :camera_id, camera.id %>
+            <%= hidden_field_tag :wishlist_id, current_user.wishlist.id %>
+            <%= submit_tag "Remove from list", :class => "delete-button btn btn-danger" %>
+           <% end %>
+        </p>
 
       <div class="pics-container" >
         <% camera.photos.each do |photo| %>
           <a href="/photos/<%= photo.id %>" class="mix photo<%= photo.category %>"><img class="photo" src="<%= photo.photo_url %>" alt=""></a>
         <% end %>
       </div>
-
-      <div id="delete-camera">
-          <%= form_tag("/cameras/remove_from_list", method: "post", remote: true) do %>
-            <%= hidden_field_tag :camera_id, camera.id %>
-            <%= hidden_field_tag :wishlist_id, current_user.wishlist.id %>
-            <%= submit_tag "Remove from list", :id => "deleteButton", :class => "button tiny" %>
-           <% end %>
-        </div>
 
   </div>
 

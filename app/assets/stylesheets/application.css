@@ -77,10 +77,9 @@ a.btn {
 }
 
 #main {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
-
-  margin-top: 100px;
+  margin-top: 90px;
 }
 
 .navbar-text{
@@ -103,7 +102,7 @@ a.btn {
 .pics-container a {
   display: block;
 }
-btn-info  {
+btn-info {
   margin-top: 20px;
 }
 
@@ -111,3 +110,10 @@ btn-info  {
   background-color: #FFF;
   color: black;
 }
+
+.delete-button{
+  margin-left: 185px;
+  text-align: center;
+}
+
+
