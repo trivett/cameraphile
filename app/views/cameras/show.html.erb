@@ -9,7 +9,10 @@
       <li>Megapixels: <%= @camera.megapixels %></li>
       <li>Memory type: <%= @camera.memory_type %></li>
       <li>Price: <%= @camera.price %></li>
+      <li><%= link_to "Amazon", "http://www.amazon.com/exec/obidos/ASIN/#{@camera.asin}/camer0a5-20"  %></li>
+
     </ul>
+
       <!-- Add/Delete -->
     <% if current_user && !current_user.wishlist.cameras.include?(@camera) %>
       <%= form_tag "/add_to_list", :method => "post", remote: true do %>

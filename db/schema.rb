@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514130602) do
+ActiveRecord::Schema.define(version: 20140515002515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140514130602) do
     t.string "large_image_url"
     t.string "lcd_screen_size"
     t.string "price"
+    t.string "asin"
   end
 
   create_table "cameras_wishlists", force: true do |t|
