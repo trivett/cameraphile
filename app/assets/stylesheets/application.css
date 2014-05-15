@@ -76,11 +76,6 @@ a.btn {
   z-index: 5;
 }
 
-#main {
-  width: 95%;
-  margin: 0 auto;
-  margin-top: 90px;
-}
 
 .navbar-text{
   float: right;
@@ -117,3 +112,9 @@ btn-info {
 }
 
 
+#main {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 90px;
+  z-index: 0
+}
