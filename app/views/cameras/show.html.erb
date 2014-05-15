@@ -16,7 +16,7 @@
     <% if current_user %>
       <%= form_tag "/add_to_list", :method => "post", remote: true do %>
       <%= hidden_field_tag :camera_id, @camera.id %>
-      <%= hidden_field_tag :wishlist_id, current_user.id %>
+      <%= hidden_field_tag :wishlist_id, current_user.wishlist.id %>
       <%= submit_tag "Add to wishlist", :class =>"add-button", :id => "add-#{@camera.id}"%>
       <% end %>
 

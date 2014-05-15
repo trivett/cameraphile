@@ -132,10 +132,10 @@
         1,
         null,
         null,
-        1,
-        1,
-        1,
-        1,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -247,16 +247,16 @@
         null,
         null,
         1,
-        1,
-        1,
+        0,
+        0,
         null,
-        1,
-        1,
+        0,
+        0,
         null,
-        1,
-        100,
+        0,
+        0,
         null,
-        1,
+        0,
         null,
         null,
         null,
@@ -317,7 +317,7 @@
         2,
         2,
         null,
-        4,
+        2,
         null,
         1,
         1,
@@ -342,24 +342,8 @@
         null,
         null,
         null
-      ],
-      "/Users/vincent/Desktop/cameraphile/app/controllers/welcome_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/vincent/Desktop/cameraphile/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null
       ]
     },
-    "timestamp": 1400164433
+    "timestamp": 1400173318
   }
 }

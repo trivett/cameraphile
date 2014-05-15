@@ -21,9 +21,10 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
-  config.include(Warden::Test::Helpers)
+  include(Warden::Test::Helpers)
   Warden.test_mode!
-  config.include FactoryGirl::Syntax::Methods
+  # after { Warden.test_reset! }
+  # config.include FactoryGirl::Syntax::Methods
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:

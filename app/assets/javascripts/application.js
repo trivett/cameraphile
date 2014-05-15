@@ -17,6 +17,8 @@
 //= require jquery.mixitup
 //= require turbolinks
 //= require masonry/jquery.masonry
+//= require bootstrap
+//= require icheck.min
 //= require_tree .
 
 var readyFunction;

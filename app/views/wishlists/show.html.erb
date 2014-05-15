@@ -1,9 +1,9 @@
 
 <div class="controls">
   <label>Filter:</label>
-  <button class="filter" data-filter=".photo">All</button>
+  <button class="filter btn btn-danger" data-filter=".photo">All</button>
   <% @types.each do |type| %>
-  <button class="filter" data-filter=".<%= type %>"><%= type.upcase %></button>
+  <button class="filter btn btn-info" data-filter=".<%= type %>"><%= type.upcase %></button>
   <% end %>
 </div>
 
@@ -20,7 +20,7 @@
     <p>LCD size: <%= camera.lcd_screen_size %> in.</p>
     <p><%= link_to "More info on this camera", camera_path(camera.id) %></p>
     <p>Memory type: <%= camera.memory_type %></p>
-    <p><%= link_to "Amazon", "http://www.amazon.com/exec/obidos/ASIN/#{camera.asin}/camer0a5-20"  %></p>
+    <p><%= link_to image_tag('amazon_buy_button.gif'), "http://www.amazon.com/exec/obidos/ASIN/#{camera.asin}/camer0a5-20"  %></p>
 
       <div class="pics-container" >
         <% camera.photos.each do |photo| %>

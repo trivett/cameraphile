@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-15T10:33:53-04:00">2014-05-15T10:33:53-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-15T13:01:58-04:00">2014-05-15T13:01:58-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">88.48%</span></span>
+    (<span class="covered_percent"><span class="yellow">84.07%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.02
+         4.67
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>9</b> files in total.
-    <b>191</b> relevant lines. 
-    <span class="green"><b>169</b> lines covered</span> and
-    <span class="red"><b>22</b> lines missed </span>
+    <b>7</b> files in total.
+    <b>182</b> relevant lines. 
+    <span class="green"><b>153</b> lines covered</span> and
+    <span class="red"><b>29</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,26 +51,6 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#411e574c8aa1efcfcb6a8c8f5076c210b98b077a" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>2</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#79c8c226b8ac49609901d9569563f3045f37a466" class="src_link" title="app/controllers/welcome_controller.rb">app/controllers/welcome_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>7</td>
-        <td>3</td>
-        <td>3</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
         <td class="strong"><a href="#aad0c0f2e9459a8f677502d377f2fbebf89cfc5b" class="src_link" title="app/models/camera.rb">app/models/camera.rb</a></td>
         <td class="yellow strong">86.21 %</td>
         <td>52</td>
@@ -82,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#4b5fb2809ac6bb6db3538dcaf98462a5b035a563" class="src_link" title="app/models/photo.rb">app/models/photo.rb</a></td>
-        <td class="red strong">79.78 %</td>
+        <td class="red strong">71.91 %</td>
         <td>161</td>
         <td>89</td>
-        <td>71</td>
-        <td>18</td>
-        <td>26.2</td>
+        <td>64</td>
+        <td>25</td>
+        <td>25.0</td>
       </tr>
       
       <tr>
@@ -114,8 +94,8 @@
         <td class="strong"><a href="#2c94b4527165aeafcc3665579aa00afded8328f5" class="src_link" title="spec/models/photo_spec.rb">spec/models/photo_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>66</td>
-        <td>42</td>
-        <td>42</td>
+        <td>38</td>
+        <td>38</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -127,7 +107,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -155,114 +135,6 @@
       </div>
     
       <div class="source_files">
-      
-        <div class="source_table" id="411e574c8aa1efcfcb6a8c8f5076c210b98b077a">
-  <div class="header">
-    <h3>app/controllers/application_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class ApplicationController &lt; ActionController::Base</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby">  # Prevent CSRF attacks by raising an exception.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby">  # For APIs, you may want to use :null_session instead.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  protect_from_forgery with: :exception</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="79c8c226b8ac49609901d9569563f3045f37a466">
-  <div class="header">
-    <h3>app/controllers/welcome_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class WelcomeController &lt; ApplicationController</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def index</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @photos = Photo.all.sample(100)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
       
         <div class="source_table" id="aad0c0f2e9459a8f677502d377f2fbebf89cfc5b">
   <div class="header">
@@ -597,11 +469,11 @@
         <div class="source_table" id="4b5fb2809ac6bb6db3538dcaf98462a5b035a563">
   <div class="header">
     <h3>app/models/photo.rb</h3>
-    <h4><span class="red">79.78 %</span> covered</h4>
+    <h4><span class="red">71.91 %</span> covered</h4>
     <div>
       <b>89</b> relevant lines. 
-      <span class="green"><b>71</b> lines covered</span> and
-      <span class="red"><b>18</b> lines missed.</span>
+      <span class="green"><b>64</b> lines covered</span> and
+      <span class="red"><b>25</b> lines missed.</span>
     </div>
   </div>
   
@@ -1208,14 +1080,14 @@
           <code class="ruby">  def self.get_interesting_photos</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="101">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="101">
+          
           
           <code class="ruby">  new_interesting_photos = []</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="102">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="102">
+          
           
           <code class="ruby">    base = open(&quot;https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&amp;api_key=#{FLICKR_KEY}&amp;format=rest&quot;)</code>
         </li>
@@ -1226,14 +1098,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="104">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="104">
+          
           
           <code class="ruby">    data = Crack::XML.parse(base)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="105">
+          
           
           <code class="ruby">    data_array = data[&quot;rsp&quot;][&quot;photos&quot;][&quot;photo&quot;]</code>
         </li>
@@ -1244,14 +1116,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="107">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="107">
+          
           
           <code class="ruby">    data_array.each do |item|</code>
         </li>
       
-        <li class="covered" data-hits="100" data-linenumber="108">
-          <span class="hits">100</span>
+        <li class="missed" data-hits="0" data-linenumber="108">
+          
           
           <code class="ruby">       new_interesting_photos &lt;&lt; Photo.create(flickr_id: item[&quot;id&quot;])</code>
         </li>
@@ -1262,8 +1134,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="110">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="110">
+          
           
           <code class="ruby">    return new_interesting_photos</code>
         </li>
@@ -1781,8 +1653,8 @@
     <h3>spec/models/photo_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>42</b> relevant lines. 
-      <span class="green"><b>42</b> lines covered</span> and
+      <b>38</b> relevant lines. 
+      <span class="green"><b>38</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2108,34 +1980,34 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="54">
           
-          <code class="ruby">  it &quot;can grab a bunch of photos&quot; do</code>
+          
+          <code class="ruby">  # it &quot;can grab a bunch of photos&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="55">
           
-          <code class="ruby">    count = Photo.all.count</code>
+          
+          <code class="ruby">  #   count = Photo.all.count</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="56">
           
-          <code class="ruby">    Photo.get_interesting_photos</code>
+          
+          <code class="ruby">  #   Photo.get_interesting_photos</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="57">
           
-          <code class="ruby">    expect(Photo.all.count).to eq(count + 100)</code>
+          
+          <code class="ruby">  #   expect(Photo.all.count).to eq(count + 100)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
@@ -2246,10 +2118,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="8">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
-          <code class="ruby">  subject(:barry){User.create(email: &quot;barry@email.com&quot;)}</code>
+          <code class="ruby">  let(:barry){User.create(email: &quot;barry@email.com&quot;, password: &quot;12345678&quot;)}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">

@@ -8,6 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootflat
  *= require_self
  *= require 'masonry/basic'
  *= require 'masonry/centered'
@@ -16,14 +17,73 @@
  *= require 'masonry/infinitescroll'
  *= require 'masonry/right-to-left'
  *= require 'masonry/transitions'
+
  *= require jquery.ui.all
 
  *= require_tree .
  */
 
+@import url(http://fonts.googleapis.com/css?family=Cantarell);
+
+
+body{
+  background-color: #656D78;
+  color: #FFF;
+}
+
+
+
 #Container .mix{
   display: none;
+
 }
+
+.controls{
+  width: 100%;
+  margin-top: 150px;
+  margin-bottom: 10px;
+  display: block;
+  line-height: 1.5em;
+}
+
+
+
+.camera-profile{
+  width: 400px;
+  background-color: #FFF;
+  color: black;
+
+}
+
+
+
+h1,h2,h3 {
+  font-family: 'Cantarell', sans-serif;
+}
+
+
+a.btn {
+ font-family: 'Cantarell', sans-serif;
+}
+
+.navbar-collapse {
+  background-color: #434A54;
+  display:block;
+  width: 100%;
+  top:0;
+  position: fixed;
+}
+
+.navbar-text{
+  float: right;
+}
+
+.logo{
+  float: left;
+}
+
+
+
 
 .pics-container .mix {
   display: none;
@@ -31,4 +91,12 @@
 
 .pics-container a {
   display: block;
+}
+btn-info  {
+  margin-top: 20px; !important
+}
+
+.desire {
+  background-color: #FFF;
+  color: black;
 }

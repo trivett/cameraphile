@@ -2,9 +2,9 @@
 
 <div class="controls">
   <label>Filter:</label>
-  <button class="filter" data-filter="all">All</button>
+  <button class="filter btn btn-danger" data-filter="all">All</button>
   <% @brands.each do |brand| %>
-  <button class="filter" data-filter=".<%= brand %>"><%= brand.upcase %></button>
+  <button class="filter btn btn-info" data-filter=".<%= brand %>"><%= brand.upcase %></button>
   <% end %>
 </div>
 
@@ -25,8 +25,8 @@
   <% if current_user && !current_user.wishlist.cameras.include?(@camera) %>
     <%= form_tag "/add_to_list", :method => "post", remote: true do %>
     <%= hidden_field_tag :camera_id, camera.id %>
-    <%= hidden_field_tag :wishlist_id, current_user.id %>
-    <%= submit_tag "Add to wishlist", :class =>"add-button", :id => "add-#{camera.id}"%>
+    <%= hidden_field_tag :wishlist_id, current_user.wishlist.id %>
+    <%= submit_tag "Add to wishlist", :class =>"add-button btn btn-info", :id => "add-#{camera.id}"%>
   <% end %>
   <% end %>
 <%= link_to "See more about this camera", camera %>

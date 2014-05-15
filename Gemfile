@@ -7,7 +7,7 @@ gem 'rails', '4.0.4'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+# gem 'sass-rails', '~> 4.0.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -61,7 +61,11 @@ group :development, :test do
   gem "rails-erd"
   gem "capybara"
   gem 'simplecov', '~> 0.7.1'
+  gem 'selenium-webdriver'
 end
 
 
 gem 'factory_girl_rails'
+gem 'bootflat-rails'
+gem 'sass-rails', :git => 'https://github.com/zakelfassi/sass-rails' # Until the gem is officially updated.
+

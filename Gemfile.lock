@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/zakelfassi/sass-rails
+  revision: 0d4013878dd18440c98da4ffa62208e7700f2477
+  specs:
+    sass-rails (4.0.2)
+      railties (>= 4.0.0, < 5.0)
+      sass (~> 3.3.4)
+      sprockets (~> 2.8, <= 2.11.0)
+      sprockets-rails (~> 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -35,6 +45,12 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootflat-rails (0.1.9)
+      bootstrap-sass (~> 3.1)
+      jquery-rails (~> 3.1)
+      sass (~> 3.3)
+    bootstrap-sass (3.1.1.1)
+      sass (~> 3.2)
     builder (3.1.4)
     capybara (2.2.1)
       mime-types (>= 1.16)
@@ -42,6 +58,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    childprocess (0.5.3)
+      ffi (~> 1.0, >= 1.0.11)
     choice (0.1.6)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -68,12 +86,13 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    ffi (1.9.3)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
     fractional (1.0.1)
     hike (1.2.3)
-    httparty (0.13.0)
+    httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
@@ -93,12 +112,12 @@ GEM
       rails
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_portile (0.5.3)
+    mini_portile (0.6.0)
     minitest (4.7.5)
     multi_json (1.10.0)
     multi_xml (0.5.5)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
@@ -137,7 +156,7 @@ GEM
     rake (10.3.1)
     rdoc (4.1.1)
       json (~> 1.4)
-    rspec-collection_matchers (0.0.3)
+    rspec-collection_matchers (0.0.4)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.0.0.beta2)
       rspec-support (= 3.0.0.beta2)
@@ -159,17 +178,18 @@ GEM
     rspec-support (3.0.0.beta2)
     ruby-graphviz (1.0.9)
     ruby-hmac (0.4.0)
-    safe_yaml (1.0.2)
-    sass (3.2.19)
-    sass-rails (4.0.3)
-      railties (>= 4.0.0, < 5.0)
-      sass (~> 3.2.0)
-      sprockets (~> 2.8, <= 2.11.0)
-      sprockets-rails (~> 2.0)
+    rubyzip (1.1.3)
+    safe_yaml (1.0.3)
+    sass (3.3.7)
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-    shoulda-matchers (2.5.0)
+    selenium-webdriver (2.41.0)
+      childprocess (>= 0.5.0)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0.4)
+    shoulda-matchers (2.6.1)
       activesupport (>= 3.0.0)
     simplecov (0.7.1)
       multi_json (~> 1.0)
@@ -199,6 +219,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket (1.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -209,6 +230,7 @@ DEPENDENCIES
   amazon-ecs
   better_errors
   binding_of_caller
+  bootflat-rails
   capybara
   coffee-rails (~> 4.0.0)
   crack
@@ -227,8 +249,9 @@ DEPENDENCIES
   rails-erd
   rails_12factor
   rspec-rails (~> 3.0.0.beta)
-  sass-rails (~> 4.0.2)
+  sass-rails!
   sdoc
+  selenium-webdriver
   shoulda-matchers
   simplecov (~> 0.7.1)
   turbolinks

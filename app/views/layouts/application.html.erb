@@ -8,27 +8,35 @@
 </head>
 <body>
 
-<p class="navbar-text">
-<% if user_signed_in? %>
-  <%= link_to 'Your Camera Wishlist', "/wishlists/#{current_user.id}", :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-  <%= link_to "Camera Directory", cameras_path, :class => 'navbar-link' %>
-</p>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+
+  <%= link_to image_tag('logo.png'), root_path, :class => 'logo' %>
+
+  <p class="navbar-text">
+  <%= link_to "Camera Directory", cameras_path, :class => 'btn btn-danger navbar-btn' %>
+  <% if user_signed_in? %>
+    <%= link_to 'Your Camera Wishlist', "/wishlists/#{current_user.id}", :class => 'btn btn-danger navbar-btn' %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-danger navbar-btn'  %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-danger navbar-btn'  %>
+    <%= link_to "Login", new_user_session_path, :class => 'btn btn-danger navbar-btn'  %>
+  <% end %>
+
+  </p>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  </div>
+
+
 
 
 <%= yield %>
 
 
-
+</div>
 </body>
 </html>
