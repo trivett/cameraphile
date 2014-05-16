@@ -48,9 +48,6 @@ readyFunction = function() {
 };
 
 
-console.log("before doc ready");
-
-
 
 $(document).ready(readyFunction);
 console.log("between doc ready and page load");

@@ -51,16 +51,16 @@ describe Photo do
     expect(pic.category).to eq("  rich bokeh high-speed")
   end
 
-  # it "can grab a bunch of photos" do
-  #   count = Photo.all.count
-  #   Photo.get_interesting_photos
-  #   expect(Photo.all.count).to eq(count + 100)
-  # end
+  it "can grab a bunch of photos" do
+    count = Photo.all.count
+    Photo.get_interesting_photos
+    expect(Photo.all.count).not_to eq(count)
+  end
 
-  # it "tries to get data from db" do
-  #   Photo.get_interesting_photos
-  #   count = Photo.all.count
-  #   Photo.try_to_get_data
-  #   expect(Photo.all.count).not_to eq(count)
-  # end
+  it "tries to get data from db" do
+    Photo.get_interesting_photos
+    count = Photo.all.count
+    Photo.try_to_get_data
+    expect(Photo.all.count).not_to eq(count)
+  end
 end
