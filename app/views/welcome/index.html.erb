@@ -1,12 +1,9 @@
 <div id="masonry-container" class="transitions-enabled clearfix has-gutters">
 
-<% cols = [ 3, 3, 3, 4, 5, 5] %>
-
-  <% @photos.shuffle.each do |photo| %>
-
-    <a class="frame col<%= cols.sample %>" href="/photos/<%= photo.id %>">
-      <img class="box picture" src="<%= photo.photo_url %>">
-    </a>
-
+  <% cols = [ 3, 3, 3, 4, 5, 5] %>
+    <% @photos.shuffle.each do |photo| %>
+      <a class="frame col<%= cols.sample %>" href="/photos/<%= photo.id %>">
+        <img class="box picture" src="<%= photo.photo_url %>">
+      </a>
   <% end %>
-  </div>
+</div>
