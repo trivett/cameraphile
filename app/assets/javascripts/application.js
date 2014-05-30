@@ -36,11 +36,10 @@ readyFunction = function() {
 
    $(function(){
 
-    $('#masonry-container img').hide();
+
 
     imagesLoaded($('#masonry-container'), function() {
 
-      $('#masonry-container img').hide();
 
       $('#masonry-container').masonry({
         itemSelector: '.box',
@@ -51,7 +50,7 @@ readyFunction = function() {
 
     });
 
-    $('#masonry-container img').fadeIn(100);
+    $('#masonry-container img').show();
     $("#main").css("z-index", "0");
     console.log("masonry firing");
   });
@@ -59,9 +58,11 @@ readyFunction = function() {
 
 
 
+
 $(document).ready(readyFunction);
+$('#masonry-container img').show();
 console.log("between doc ready and page load");
 
 $(document).on('page:load', readyFunction);
-
+$('#masonry-container img').show();
 
