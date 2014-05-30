@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @photos = Photo.all.sample(50)
+    @photos = Photo.all.sample(30)
   end
 
 end

@@ -1,14 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
+
 //
 //= require jquery
 //= require jquery_ujs
@@ -24,6 +14,7 @@
 
 var readyFunction;
 
+
 readyFunction = function() {
   $(".navbar-collapse").css("z-index", "5");
   $('#Container').mixItUp();
@@ -33,10 +24,23 @@ readyFunction = function() {
       display: 'block'
     }
   });
+
+
+
+  $('#masonry-container').masonry({
+        itemSelector: '.box',
+        columnWidth: 100,
+        gutterWidth: 10
+
+      });
+
    $(function(){
+
     $('#masonry-container img').hide();
+
     imagesLoaded($('#masonry-container'), function() {
 
+      $('#masonry-container img').hide();
 
       $('#masonry-container').masonry({
         itemSelector: '.box',
@@ -46,6 +50,7 @@ readyFunction = function() {
       });
 
     });
+
     $('#masonry-container img').fadeIn(100);
     $("#main").css("z-index", "0");
     console.log("masonry firing");
